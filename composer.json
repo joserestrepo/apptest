@@ -1,11 +1,8 @@
 {
-    "require" : {
-      "silex/silex": "^2.0.4",
-      "monolog/monolog": "^1.22",
-      "twig/twig": "^2.0",
-      "symfony/twig-bridge": "^3"
-    },
-    "require-dev": {
-      "heroku/heroku-buildpack-php": "*"
+    "require": {
+        "twbs/bootstrap": "3.3.*",
+        "doctrine/orm": "*",
+        "monolog/monolog": "1.2.*",
+        "uxweb/sweet-alert": "1.4.*"
     }
-  }
+}
