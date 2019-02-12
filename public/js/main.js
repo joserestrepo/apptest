@@ -6,9 +6,9 @@
 
   // Or with jQuery
 $(document).ready(function(){
-
-    $("#enviar").click(function(){
-    })
+    if($(this).attr('title')=="Resultados"){
+        window.print()
+    }
 
     $(".btn.texto-azul.ml-3.sig").click(function(){
         var actual = $(this).parent().parent().parent()
@@ -139,7 +139,7 @@ $(document).ready(function(){
                 campo3 += "Desarrollo, crecimiento sistemático, seguridad en sus metas y planeación, con aspiraciones y metas proyectadas hacia futuro, ambición y nivel de confianza "
             }
 
-            if($("#campo3").val() == "NO Cumple"){
+            if($("#campo3").val() == "NO cumple"){
                 campo3 += "poca ambición y bajo deseo de crecimiento sistemático, pocas metas proyectadas hacia futuro"
             }
 
@@ -230,7 +230,26 @@ $(document).ready(function(){
 
             //iSituacional
             if($("#interSituacional").val() != "Escoge una opcion"){
-                iSituacional = $("#interSituacional").val()
+                if($("#interSituacional").val() == "RIGIDA: Orden normal 1,2,3,4,5,6,7,8"){
+                    iSituacional = "RIGIDA: Orden normal: normatividad,practicidad"
+                }
+                if($("#interSituacional").val() == "RIGIDA INVERTIDA: Reversa 8,7,6,5,4,3,2,1"){
+                    iSituacional = "RIGIDA INVERTIDA: Reversa: rebeldia,oposicionismo y dificultad de acatar orientacion"
+                }
+                if($("#interSituacional").val() == "RIGIDA INVERTIDA INCOMPLETA: 9,7,6,5,1,2,3,4,5"){
+                    iSituacional = "RIGIDA INVERTIDA INCOMPLETA: inicialmente muestra oposicionismo, pero luego acata lo que se le pide"
+                }
+                if($("#interSituacional").val() == "ORDENADO: Dos saltos en secuencia rígida 1,2,5,6,3,4,7,8"){
+                    iSituacional = "ORDENADO: Dos saltos en secuencia rígida: actuacion metódica y flexibilidad"
+                }
+                if($("#interSituacional").val() == "DESORDENADA: Tres a cinco saltos en el orden rígido"){
+                    iSituacional = "DESORDENADA: Tres a cinco saltos en el orden rígido: es indicio de impulsividad"
+                }
+                if($("#interSituacional").val() == "CAOTICA: No hay estructura en su proceder"){
+                    iSituacional = "CAOTICA: No hay estructura en su proceder, se puede interpretar como falta de lógica de planeación y de organización."
+                }
+
+                
             }
             
             //INTERPRETACION ESTRUCTURAL
@@ -523,6 +542,38 @@ $(document).ready(function(){
     
     $('#btnimpri').click(function(){
         calificacion = $("#calificacion").val()
-        window.location.href="resultados-"+empresa+"-"+postulante+"-"+fechaNacimiento+"-"+edad+"-"+formacion+"-"+puestoRequerido+"-"+campo1+"-"+campo2+"-"+campo3+"-"+campo4+"-"+campo5+"-"+campo6+"-"+campo7+"-"+campo8+"-"+iSituacional+"-"+iEstrucAIntelectual+"-"+iEstucAEmocional+"-"+iEstucALaboral+"-"+iEstrucAsFaPerfil+"-"+localidad+"-"+calificacion;
+        var data ={
+            empresad : empresa,
+            postulanted : postulante,
+            fechaNacimientod : fechaNacimiento,
+            edadd : edad,
+            formaciond : formacion,
+            puestod : puestoRequerido,
+            campo1d : campo1,
+            campo2d : campo2,
+            campo3d : campo3,
+            campo4d : campo4,
+            campo5d : campo5,
+            campo6d : campo6,
+            campo7d : campo7,
+            campo8d : campo8,
+            iSituacionald : iSituacional,
+            iEstrucAIntelectuald : iEstrucAIntelectual,
+            iEstrucAsFaPerfild : iEstrucAsFaPerfil,
+            iEstucAEmocionald : iEstucAEmocional,
+            iEstucALaborald : iEstucALaboral,
+            localidadd : localidad,
+            calificaciond : calificacion
+        }
+        $.ajax({
+            type    : 'POST',
+            url     : 'controladorDatos',
+            data    : data,
+            dataType : 'text',
+            success: function(data){
+               
+            }
+        })
+        window.location.href="resultados";
     })
 })

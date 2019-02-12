@@ -1,5 +1,5 @@
 <div class="container col-12 pt-5 pb-5 fondo" >
-    <div class="collapse container col-6 p-0 pt-5 justify-content-center mt-5 text-center fondo-blanco" id="verificarDatos">
+    <div class="collapse container col-9 p-0 pt-5 justify-content-center mt-5 text-center fondo-blanco" id="verificarDatos">
         <div id="contenedorLoader">
                 <div id="loader" class="lds-ring"><div></div><div></div><div></div><div></div></div>
         </div>
@@ -12,7 +12,7 @@
         <div class="alert-primary col-12 text-center fondo-oscuro texto-blanco">
             <h3>Prueba Wartegg</h3>
         </div>
-        <div class="collapse p-5" id="datos">
+        <div class=" p-5" id="datos">
             <div class="col-12">
                 <div class="form-group col-12 text-left">
                     <label for="empresa" class="bmd-label-floating texto-negro">EMPRESA</label>
@@ -28,6 +28,7 @@
             <div class="col-12">
                 <div class="form-group col-12 text-left">
                     <label for="nacimiento" class="bmd-label-floating texto-negro">FECHA DE NACIMIENTO</label>
+                    <br>
                     <input type="date" class="form-control" id="nacimiento">
                 </div>
             </div>
@@ -283,7 +284,7 @@
                         <option>RIGIDA INVERTIDA INCOMPLETA: 9,7,6,5,1,2,3,4,5</option>
                         <option>ORDENADO: Dos saltos en secuencia rígida 1,2,5,6,3,4,7,8</option>
                         <option>DESORDENADA: Tres a cinco saltos en el orden rígido</option>
-                        <option>CAOTICA_ No hay estructura en su proceder</option>
+                        <option>CAOTICA: No hay estructura en su proceder</option>
                     </select>
             </div> <!-- cierre interpretacion situacional -->
                 <div class="col-12 p-0 mb-3">
@@ -419,9 +420,10 @@
             </div>
         </div>
 
-        <div class="text-left pl-5 pr-5" >
+        <div class="collapse text-left pl-5 pr-5" >
             <div class="form-group col-12">
-                <label for="localidad">Localidad</label>
+                <label for="localidad " class="bmd-label texto-negro">Localidad</label>
+                <br><br>
                 <div class="radio">
                         <label>
                             <input type="radio" name="localidad1" id="localidad11">
@@ -461,25 +463,17 @@
                         <p class="texto-negro">Derecha</p> 
                         </label>
                     </div>
-                    <br>
-                <p>CALIFICACION</p>    
-                <label for="calificacion" class="bmd-label texto-negro">Seleccione si el aspirante aprobo o reprobo</label>
-                <br>
-                <select class="form-control" id="calificacion">
-                    <option>Escoge una opcion</option>
-                    <option>APROBADO</option>
-                    <option>REPROBADO</option>
-                </select>
-                <br>
+                <br><br><br>
                         <div class="text-left col-5 d-inline-block p-0 text-left">
                             <button class="btn texto-azul atras">Atras</button>
                         </div>
                         <div class="col-6 d-inline-block text-right p-0">
                             <button class="btn texto-azul ml-3" id="enviar">Enviar</button>
 
-                        </div>
+                        </div> 
                         
         </div>
+
     </div>
     
 </div>

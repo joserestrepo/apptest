@@ -35,6 +35,10 @@
             $titulo = 'Resultados';
             $vista = 'php/view/resultados.php';
         }
+        if($_GET['url'] == "controladorDatos"){
+            $titulo = 'controlador datos';
+            $vista = 'php/controller/controller.datos.php';
+        }
     }else{
         $titulo = 'Home';
         $vista = 'php/view/home.php';
